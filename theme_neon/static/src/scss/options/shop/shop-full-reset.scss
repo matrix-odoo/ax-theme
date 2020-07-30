@@ -1,0 +1,30 @@
+#products_grid {
+	.as-pro-col {
+		padding-left: 8px;
+		padding-right: 8px;
+		.as-product {
+			margin-bottom: 16px;
+		}
+	}
+	&:not(.o_wsale_layout_list) {
+		@include down-xs {
+			.as-pro-col {
+				flex: 0 0 calc(100% / 2);
+				max-width: calc(100% / 2);
+			}
+		}
+	}
+	.as-product-list {
+		> .row {
+			margin-left: -4px;
+			margin-right: -4px;
+		}
+	}
+}
+
+#products_grid.o_wsale_layout_list {
+	.as-pro-col {
+		flex: 0 0 100%;
+		max-width: 100%;
+	}
+}

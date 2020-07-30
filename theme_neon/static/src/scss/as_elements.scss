@@ -1,0 +1,218 @@
+/* List Type
+------------------------------*/
+.list-type1 {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	li {
+		position: relative;
+		padding: 2px 0 2px 20px;
+		&:after {
+			content:"";
+			width: 10px;
+			height: 10px;
+			border: 2px solid $as-theme;
+			position: absolute;
+			top: 9px;
+			left: 0;
+			border-radius: 50%;
+		}
+	}
+}
+
+.list-type2 {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	li {
+		position: relative;
+		padding: 2px 0 2px 30px;
+		&:after {
+		    content: "";
+		    width: 9px;
+		    height: 15px;
+		    border-right: 2px solid $as-theme;
+		    border-bottom: 2px solid $as-theme;
+		    position: absolute;
+		    top: 6px;
+		    left: 0;
+		    transform: rotate(45deg);
+		}
+	}
+	&.white {
+		li {
+			&:after {
+				border-color: $as-white;
+			}
+		}
+	}
+}
+
+.list-type3 {
+    margin: 0;
+	padding: 0;
+	li {
+	    position: relative;
+	    list-style: none;
+	    padding: 6px 0 6px 32px;
+	    &:after {
+		    content: "";
+		    position: absolute;
+		    top: 10px;
+		    left: 7px;
+		    width: 9px;
+		    height: 16px;
+		    border-right: 3px solid $as-theme;
+		    border-bottom: 3px solid $as-theme;
+		    @include rotate(45);
+	    }
+	}
+}
+
+
+/* Tabs
+------------------------------*/
+.tab-style-1 {
+	.nav-tabs {
+		flex-direction: column;
+		margin: 0;
+		.nav-item {
+			margin: 0;
+			width: 100%;
+			+ .nav-item {
+				margin-top: 25px;
+			}
+			.nav-link {
+				border: none;
+				padding: 40px;
+				display: block;
+				border-radius: 5px;
+				background: $as-white;
+				box-shadow: 0px 30px 60px 0px rgba(38, 59, 94, 0.1);
+				color: $as-dark-color;
+				font-weight: 600;
+				&.active {
+					background: $as-theme;
+					color: $as-white;
+				}
+			}
+		}
+	}	
+}
+
+.tab-style-2 {
+	.nav-tabs {
+		margin: 0;
+		justify-content: center;
+		.nav-item {
+			margin: 5px;
+			.nav-link {
+			    padding: 10px 15px;
+			    display: block;
+			    border-radius: 5px;
+			    font-weight: 600;
+			    border: 1px solid #ddd;
+			    font-size: 0.85rem;
+				background: $as-white;
+				color: $as-dark-color;
+				&.active {
+					background: $as-theme;
+					color: $as-white;
+					border-color: $as-theme;
+				}
+			}
+		}
+	}	
+	.tab-content {
+		padding-top: 20px;
+	}
+}
+
+/*	Skill
+---------------------------*/
+.skill-lt {
+	&:not(:last-child) {
+		margin-bottom: 30px;
+	}
+	h6 {
+	    font-size: 16px;
+		margin: 0 0 10px;
+	} 
+	.skill-bar {
+		position: relative;
+		background: #eee;
+		.skill-bar-in {
+			width: 0px;
+			@include transition(ease all 0.55s);
+			height: 5px;
+			position: relative;
+			span {
+				position: absolute;
+				right: 0;
+				top: -30px;
+				font-size: 14px;
+			}
+		}
+	}
+	&.md {
+		.skill-bar {
+			.skill-bar-in {	
+				height: 8px;
+			}
+		}
+	}
+
+	&.lg {
+		.skill-bar {
+			.skill-bar-in {	
+				height: 10px;
+			}
+		}
+	}
+	&.light {
+		.skill-bar {
+			background: rgba($as-black, .5);
+		}
+	}
+}
+
+/*	Form
+---------------------------*/
+.form-control {
+    &:focus {
+        background-color: $as-white;
+        border-color: $as-theme;
+        outline: 0;
+        box-shadow: none;
+    }
+}
+
+/*	Icons
+---------------------------*/
+@for $i from 4 through 13 {
+  .icon-#{$i * 10}px {
+    width: #{$i * 10}px;
+    height: #{$i * 10}px;
+    line-height: #{$i * 10}px;
+    font-size:#{$i * 10 / 2}px;
+  }
+}
+
+/*	Avatar
+---------------------------*/
+@for $i from 4 through 13 {
+  .avatar-#{$i * 10}px {
+    width: #{$i * 10}px;
+    height: #{$i * 10}px;
+    overflow: hidden;
+    position: relative;
+    img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      margin: auto;
+    }
+  }
+}
